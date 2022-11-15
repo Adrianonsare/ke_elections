@@ -1,0 +1,6 @@
+pandas
+numpy 
+plotly
+streamlit
+openpyxl
+xlrd = 1.0.0 
