@@ -10,7 +10,7 @@ st.title("Streamlit Test")
 uploaded_file = st.file_uploader("Upload File")
 
 try:
-    @st.cache
+    @st.cache_data
     def uploadfile(x):
         if uploaded_file is not None:
 
