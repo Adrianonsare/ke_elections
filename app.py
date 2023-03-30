@@ -10,14 +10,16 @@ st.title("Streamlit Test")
 uploaded_file = st.file_uploader("Upload File")
 
 try:
-    @st.cache_data
+    # @st.cache_data
     def uploadfile(x):
         if uploaded_file is not None:
 
             df=pd.read_excel(x)
 
             return df
+   
     df=uploadfile(uploaded_file)
+    
 
 
 
