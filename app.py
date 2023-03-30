@@ -19,7 +19,7 @@ try:
             return df
 
     df=uploadfile(uploaded_file)
-    st.write(df)
+    st.dataframe(df)
 
     # st.sidebar.title("Select County")
     # option_select=st.sidebar.radio("County Select Options",("All","Select"))
