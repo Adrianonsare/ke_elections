@@ -17,28 +17,26 @@ try:
             df=pd.read_excel(x)
 
             return df
-   
+
     df=uploadfile(uploaded_file)
-    
+    st.write(df.head)
 
+    # st.sidebar.title("Select County")
+    # option_select=st.sidebar.radio("County Select Options",("All","Select"))
 
-
-    st.sidebar.title("Select County")
-    option_select=st.sidebar.radio("County Select Options",("All","Select"))
-
-    if option_select == "All":
-        data_select=df
-        st.dataframe(data_select)
-        group=data_select.groupby('variable')['CountOFVotes'].sum().reset_index()
-        fig=px.bar(group,x='variable',y='CountOfVotes')
-        st.plotly_chart(fig,use_container_width=True)
-    else:
-        variable=df['variable'].unique()
-        var_select=st.sidebar.selectbox("Select County",variable)
-        data_select=df[df['variable']==var_select]
-        st.dataframe(data_select)
-        fig=px.bar(data_select,x='County',y='CountOfVotes')
-        st.plotly_chart(fig,use_container_width=True)
+    # if option_select == "All":
+    #     data_select=df
+    #     st.dataframe(data_select)
+    #     group=data_select.groupby('variable')['CountOFVotes'].sum().reset_index()
+    #     fig=px.bar(group,x='variable',y='CountOfVotes')
+    #     st.plotly_chart(fig,use_container_width=True)
+    # else:
+    #     variable=df['variable'].unique()
+    #     var_select=st.sidebar.selectbox("Select County",variable)
+    #     data_select=df[df['variable']==var_select]
+    #     st.dataframe(data_select)
+    #     fig=px.bar(data_select,x='County',y='CountOfVotes')
+    #     st.plotly_chart(fig,use_container_width=True)
       
 except:
     st.warning("You Have Not Uploaded A File")
